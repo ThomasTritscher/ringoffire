@@ -34,6 +34,7 @@ export class GameInfoComponent implements OnInit {
 
   }
 
+  // implemented the information (title,description) of the JSON Array into game
   ngOnChanges(): void {
 
     if (this.card) {

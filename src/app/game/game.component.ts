@@ -32,6 +32,12 @@ export class GameComponent implements OnInit {
       console.log('New card:' + this.currentCard);
       console.log('Game is', this.game);
 
+
+
+      this.game.currentPlayer++;// elevated to the next player
+      // Modulo = 3/3 = 0 stopps the after 3 players
+      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
+
       setTimeout(() => {
         this.game.playedCards.push(this.currentCard);//added the card into playedCards array after the animation
         this.pickCardAnimation = false;
@@ -44,6 +50,7 @@ export class GameComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
     dialogRef.afterClosed().subscribe((name: string) => {
+      if(name && name.length > 0)//check ar for excisting && adds players greater than 0
       console.log('The dialog was closed',name);
       this.game.players.push(name);
     });
