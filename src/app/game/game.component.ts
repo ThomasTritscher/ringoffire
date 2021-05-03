@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/models/game';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -14,15 +16,33 @@ export class GameComponent implements OnInit {
   game!: Game;
 
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.newGame();
+    this.route.params.subscribe((params) => {
+      console.log(params);
+
+      this
+        .firestore
+        .collection('Games')
+        .doc(params.id)
+        .valueChanges()
+        .subscribe((game: any) => {
+          console.log('Game update', game);
+          this.game.currentPlayer = game.currentPlayer;
+          this.game.playedCards = game.playedCards;
+          this.game.players = game.players;
+          this.game.stack = game.stack;
+        });//Collection Daten werden von FBS eingepflegt
+    });
   }
 
   newGame() {
     this.game = new Game();
-    console.log(this.game);
+    // this.firestore
+    // .collection('Games')
+    // .add(this.game.toJson());
   }
 
   takeCard() {
@@ -50,8 +70,8 @@ export class GameComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
     dialogRef.afterClosed().subscribe((name: string) => {
-      if(name && name.length > 0)//check ar for excisting && adds players greater than 0
-      console.log('The dialog was closed',name);
+      if (name && name.length > 0)//check ar for excisting && adds players greater than 0
+        console.log('The dialog was closed', name);
       this.game.players.push(name);
     });
   }

@@ -16,6 +16,16 @@ export class Game {
     this.shuffle(this.stack);
   }
 
+  //Json mit Variabelen wird zurück gegeben
+  public toJson() {
+    return {
+      players: this.players,
+      stack: this.stack,
+      playedCards: this.playedCards,
+      currentPlayer: this.currentPlayer
+    };
+  }
+
   shuffle(array: any) {
     var currentIndex = array.length, temporaryValue, randomIndex;
   
