@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
+import { EditPlayerComponent } from '../edit-player/edit-player.component';
 
 @Component({
   selector: 'app-game',
@@ -11,10 +12,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
- 
+
   game!: Game;
   gameId: string;
-    pickCardAnimation: any;
+  pickCardAnimation: any;
 
 
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
@@ -42,7 +43,7 @@ export class GameComponent implements OnInit {
     });
   }
 
-  newGame():void {
+  newGame(): void {
     this.game = new Game();
     // this.firestore
     // .collection('Games')
@@ -58,7 +59,7 @@ export class GameComponent implements OnInit {
       this.game.currentPlayer++;// elevated to the next player
       // Modulo = 3/3 = 0 stopps the after 3 players
       this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
-      
+
       this.saveGame();
       setTimeout(() => {
         this.game.playedCards.push(this.game.currentCard);//added the card into playedCards array after the animation
@@ -72,6 +73,16 @@ export class GameComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
 
+  editPlayer(playerId: number) {
+    console.log('Edit player', playerId);
+    const dialogRef = this.dialog.open(EditPlayerComponent);
+    dialogRef.afterClosed().subscribe((change: string) => {
+     console.log('Received change', change)
+    });
+
+  }
+
+
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
@@ -84,11 +95,15 @@ export class GameComponent implements OnInit {
   }
 
   saveGame() {
-      this
+    this
       .firestore
       .collection('Games')
       .doc(this.gameId)
       .update(this.game.toJson());
   }
-
+  
 }
+function i(arg0: string, i: any) {
+  throw new Error('Function not implemented.');
+}
+
