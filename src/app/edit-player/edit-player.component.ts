@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-player.component.scss']
 })
 export class EditPlayerComponent implements OnInit {
+  allProfilepictures = ['1.webp', '2.png', 'monkey.png', 'pinguin.svg',];
 
   constructor() { }
 

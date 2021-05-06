@@ -36,6 +36,7 @@ export class GameComponent implements OnInit {
           this.game.currentPlayer = game.currentPlayer;
           this.game.playedCards = game.playedCards;
           this.game.players = game.players;
+          this.game.player_images = game.player_images;
           this.game.stack = game.stack;
           this.game.pickCardAnimation = game.pickCardAnimation;
           this.game.currentCard = game.currentCard;
@@ -90,6 +91,7 @@ export class GameComponent implements OnInit {
       if (name && name.length > 0)//check for excisting && adds players greater than 0
         console.log('The dialog was closed', name);
       this.game.players.push(name);
+      this.game.player_images.push('1.webp');
       this.saveGame();
     });
   }
