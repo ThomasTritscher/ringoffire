@@ -11,10 +11,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  pickCardAnimation = false;
-  currentCard: string = '';
+ 
   game!: Game;
   gameId: string;
+    pickCardAnimation: any;
 
 
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
@@ -36,11 +36,13 @@ export class GameComponent implements OnInit {
           this.game.playedCards = game.playedCards;
           this.game.players = game.players;
           this.game.stack = game.stack;
+          this.game.pickCardAnimation = game.pickCardAnimation;
+          this.game.currentCard = game.currentCard;
         });//Collection Daten werden von FBS eingepflegt
     });
   }
 
-  newGame() {
+  newGame():void {
     this.game = new Game();
     // this.firestore
     // .collection('Games')
@@ -49,22 +51,25 @@ export class GameComponent implements OnInit {
 
   takeCard() {
     if (!this.pickCardAnimation) {
-      this.currentCard = this.game.stack.pop();//delete last card of the array
-      this.pickCardAnimation = true;
-      console.log('New card:' + this.currentCard);
+      this.game.currentCard = this.game.stack.pop();//delete last card of the array
+      this.game.pickCardAnimation = true;
+      console.log('New card:' + this.game.currentCard);
       console.log('Game is', this.game);
-      this.saveGame();
       this.game.currentPlayer++;// elevated to the next player
       // Modulo = 3/3 = 0 stopps the after 3 players
       this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
-
+      
+      this.saveGame();
       setTimeout(() => {
-        this.game.playedCards.push(this.currentCard);//added the card into playedCards array after the animation
-        this.pickCardAnimation = false;
+        this.game.playedCards.push(this.game.currentCard);//added the card into playedCards array after the animation
+        this.game.pickCardAnimation = false;
         this.saveGame();
       }, 1000);
     }
 
+  }
+  currentCard(currentCard: any) {
+    throw new Error('Method not implemented.');
   }
 
   openDialog(): void {

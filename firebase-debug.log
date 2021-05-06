@@ -1,0 +1,141 @@
+[debug] [2021-05-05T06:43:22.422Z] ----------------------------------------------------------------------
+[debug] [2021-05-05T06:43:22.423Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Acer\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-05-05T06:43:22.424Z] CLI Version:   9.10.0
+[debug] [2021-05-05T06:43:22.424Z] Platform:      win32
+[debug] [2021-05-05T06:43:22.424Z] Node Version:  v14.15.4
+[debug] [2021-05-05T06:43:22.424Z] Time:          Wed May 05 2021 08:43:22 GMT+0200 (Mitteleuropäische Sommerzeit)
+[debug] [2021-05-05T06:43:22.424Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-05-05T06:43:22.429Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-05T06:43:22.429Z] > authorizing via signed-in user (thomastritscher33@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Acer\Desktop\Developer_Akademie\ringoffire
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using ring-of-fire-5f45f. 
+[debug] [2021-05-05T06:44:45.705Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ring-of-fire-5f45f [none]
+[debug] [2021-05-05T06:44:45.993Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ring-of-fire-5f45f 200
+[debug] [2021-05-05T06:44:45.993Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ring-of-fire-5f45f {"projectId":"ring-of-fire-5f45f","projectNumber":"39113766846","displayName":"Ring of fire","name":"projects/ring-of-fire-5f45f","resources":{"hostingSite":"ring-of-fire-5f45f","realtimeDatabaseInstance":"ring-of-fire-5f45f-default-rtdb","storageBucket":"ring-of-fire-5f45f.appspot.com","locationId":"europe-west"},"state":"ACTIVE"}
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2021-05-05T06:44:45.995Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-05T06:44:45.995Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-05T06:44:46.138Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Wed, 05 May 2021 06:44:46 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-05T06:44:46.148Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/ring-of-fire-5f45f/services/firebasedatabase.googleapis.com  
+ 
+[debug] [2021-05-05T06:44:47.106Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 May 2021 06:44:46 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2021-05-05T06:44:47.109Z] > refreshing access token with scopes: []
+[debug] [2021-05-05T06:44:47.109Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-05T06:44:47.328Z] <<< HTTP RESPONSE 200 {"date":"Wed, 05 May 2021 06:44:47 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-05T06:44:47.341Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ring-of-fire-5f45f [none]
+[debug] [2021-05-05T06:44:47.689Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ring-of-fire-5f45f 200
+[debug] [2021-05-05T06:44:47.689Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ring-of-fire-5f45f {"projectId":"ring-of-fire-5f45f","projectNumber":"39113766846","displayName":"Ring of fire","name":"projects/ring-of-fire-5f45f","resources":{"hostingSite":"ring-of-fire-5f45f","realtimeDatabaseInstance":"ring-of-fire-5f45f-default-rtdb","storageBucket":"ring-of-fire-5f45f.appspot.com","locationId":"europe-west"},"state":"ACTIVE"}
+[debug] [2021-05-05T06:44:47.690Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-05T06:44:47.690Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-05T06:44:47.908Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Wed, 05 May 2021 06:44:47 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-05T06:44:47.913Z] >>> HTTP REQUEST GET https://firebasedatabase.googleapis.com/v1beta/projects/ring-of-fire-5f45f/locations/-/instances/ring-of-fire-5f45f-default-rtdb  
+ 
+[debug] [2021-05-05T06:44:48.296Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 May 2021 06:44:48 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[info] Skipping overwrite of Realtime Database Security Rules.
+[info] The security rules defined in database.rules.json will be published when you run firebase deploy.
+[info] 
+=== Firestore Setup
+[debug] [2021-05-05T06:45:18.583Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/ring-of-fire-5f45f/services/firestore.googleapis.com  
+ 
+[debug] [2021-05-05T06:45:19.532Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 May 2021 06:45:19 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-05T06:45:19.533Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/ring-of-fire-5f45f  
+ 
+[debug] [2021-05-05T06:45:19.785Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 May 2021 06:45:19 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-05T06:45:19.786Z] database_type: CLOUD_FIRESTORE
+[debug] [2021-05-05T06:45:19.786Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-05T06:45:19.787Z] > authorizing via signed-in user (thomastritscher33@gmail.com)
+[debug] [2021-05-05T06:45:19.787Z] [iam] checking project ring-of-fire-5f45f for permissions ["firebase.projects.get"]
+[debug] [2021-05-05T06:45:19.787Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/ring-of-fire-5f45f:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-05-05T06:45:20.501Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 May 2021 06:45:20 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=597","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2021-05-05T06:45:56.805Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/ring-of-fire-5f45f/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2021-05-05T06:45:56.806Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/ring-of-fire-5f45f/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2021-05-05T06:45:57.071Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 May 2021 06:45:57 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-05T06:45:57.072Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 May 2021 06:45:57 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+=== Functions Setup
+[info] 
+[info] A functions directory will be created in your project with a Node.js
+[info] package pre-configured. Functions can be deployed with firebase deploy.
+[info] 
+[debug] [2021-05-05T06:45:57.078Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-05T06:45:57.078Z] > authorizing via signed-in user (thomastritscher33@gmail.com)
+[debug] [2021-05-05T06:45:57.078Z] [iam] checking project ring-of-fire-5f45f for permissions ["firebase.projects.get"]
+[debug] [2021-05-05T06:45:57.078Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/ring-of-fire-5f45f:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-05-05T06:45:57.304Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 May 2021 06:45:57 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=118","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-05T06:45:57.306Z] >>> HTTP REQUEST POST https://serviceusage.googleapis.com/v1/projects/ring-of-fire-5f45f/services/cloudfunctions.googleapis.com:enable  
+ 
+[debug] [2021-05-05T06:45:57.306Z] >>> HTTP REQUEST POST https://serviceusage.googleapis.com/v1/projects/ring-of-fire-5f45f/services/runtimeconfig.googleapis.com:enable  
+ 
+[debug] [2021-05-05T06:45:57.731Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 May 2021 06:45:57 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-05T06:45:58.144Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 May 2021 06:45:58 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  Skipping write of functions/package.json 
+[info] +  Wrote functions/index.js 
+[info] i  Skipping write of functions/.gitignore 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2021-05-05T06:47:48.242Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2021-05-05T06:47:48.343Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2021-05-05T06:47:48.344Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"8.4.3","browserURL":"https://www.gstatic.com/firebasejs/8.4.3/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/8.4.3/firebase.tgz"},"live":{"version":"8.4","browserURL":"https://www.gstatic.com/firebasejs/live/8.4/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/8.4/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js","auth":"https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js","database":"https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js","firestore":"https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js","functions":"https://www.gstatic.com/firebasejs/8.4.3/firebase-functions.js","installations":"https://www.gstatic.com/firebasejs/8.4.3/firebase-installations.js","messaging":"https://www.gstatic.com/firebasejs/8.4.3/firebase-messaging.js","storage":"https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/8.4.3/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/8.4.3/firebase-remote-config.js","firestore.memory":"https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.memory.js"}}
+[info] i  Skipping write of dist/ringoffire/index.html 
+[info] 
+=== Storage Setup
+[info] 
+[info] Firebase Storage Security Rules allow you to define how and when to allow
+[info] uploads and downloads. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[info] 
+=== Emulators Setup
