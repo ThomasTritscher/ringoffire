@@ -95,7 +95,7 @@
   display   : flex;
   overflow-x: auto;
   overflow-y: hidden;
- 
+
   // @media (min-width: 720px){
   //   .hide-desktop {
   //     display: none;
@@ -106,10 +106,29 @@
     margin-left: 8px;
   }
 }
-app-player-mobile, app-player {
+
+app-player-mobile,
+app-player {
   cursor: pointer;
 
   &:hover {
-    filter:brightness(1.15)
+    filter: brightness(1.15)
   }
+}
+
+.gameOver {
+  display        : flex;
+  justify-content: center;
+  margin: 20%;
+
+  img {
+    width : 30%;
+    height: 30vh;
+  }
+}
+.preloadImage {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  z-index: -99999;
 }
