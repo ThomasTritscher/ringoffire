@@ -16,6 +16,7 @@ export class GameComponent implements OnInit {
   game!: Game;
   gameId: string;
   pickCardAnimation: any;
+  gameOver = false;
 
 
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
@@ -52,7 +53,10 @@ export class GameComponent implements OnInit {
   }
 
   takeCard() {
-    if (!this.pickCardAnimation) {
+    if(this.game.stack.length == 0){
+      this.gameOver = true;
+    }
+    else if (!this.pickCardAnimation) {
       this.game.currentCard = this.game.stack.pop();//delete last card of the array
       this.game.pickCardAnimation = true;
       console.log('New card:' + this.game.currentCard);
@@ -76,11 +80,21 @@ export class GameComponent implements OnInit {
 
   editPlayer(playerId: number) {
     console.log('Edit player', playerId);
+
     const dialogRef = this.dialog.open(EditPlayerComponent);
     dialogRef.afterClosed().subscribe((change: string) => {
-     console.log('Received change', change)
-    });
+      console.log('Received change', change);
+      if (change) {
+        if (change == 'DELETE') {
+          this.game.players.splice(playerId, 1)
+          this.game.player_images.splice(playerId, 1)
 
+        } else {
+          this.game.player_images[playerId] = change;//assigns player id image
+        }
+        this.saveGame();
+      }
+    });
   }
 
 
@@ -103,7 +117,7 @@ export class GameComponent implements OnInit {
       .doc(this.gameId)
       .update(this.game.toJson());
   }
-  
+
 }
 function i(arg0: string, i: any) {
   throw new Error('Function not implemented.');
