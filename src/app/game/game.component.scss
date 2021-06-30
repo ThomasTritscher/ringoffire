@@ -16,6 +16,10 @@
     position: absolute;
     width   : 120px;
 
+    @media (max-width: 768px) {
+      width: 80px;
+    }
+
   }
 }
 
@@ -30,11 +34,19 @@
 
 .played-card {
   transform: scale(1.3) translateX(140px) translateY(-150px) rotate(-10deg);
+
+  @media (max-width: 768px) {
+    transform: scale(1.3) translateX(20px) translateY(-100px) rotate(-10deg);
+  }
 }
 
 .pick-card {
   animation: pick-card-animation 1.5s ease-in-out;
   transform: scale(1.3) translateX(140px) translateY(-150px) rotate(-10deg);
+
+  @media (max-width: 768px) {
+    transform: scale(1.3) translateX(20px) translateY(-100px) rotate(-10deg);
+  }
 }
 
 @keyframes pick-card-animation {
@@ -70,10 +82,41 @@
   z-index : 2;
 
   @media (max-width: 720px) {
-    right : 16px;
-    bottom: 16px;
+    display: none;
   }
 }
+
+.btn-home {
+  position: absolute;
+  bottom  : 32px;
+  left    : 32px;
+  z-index : 2;
+
+  @media (max-width: 720px) {
+    display: none;
+  }
+}
+
+
+.mobile-menu {
+
+  @media (max-width: 768px) {
+    position: absolute;
+    bottom  : 108px;
+    right   : 0px;
+    z-index : 5;
+  }
+
+}
+.custom-mini-fab-btn{
+  @media (max-width: 768px) {
+    position: absolute;
+    bottom  : 80px;
+    right   : 0px;
+    z-index : 5;
+  }
+}
+
 
 .pin-bottom {
   position: absolute;
@@ -119,16 +162,17 @@ app-player {
 .gameOver {
   display        : flex;
   justify-content: center;
-  margin: 20%;
+  margin         : 20%;
 
   img {
     width : 30%;
     height: 30vh;
   }
 }
+
 .preloadImage {
-  width: 0px;
-  height: 0px;
+  width  : 0px;
+  height : 0px;
   opacity: 0;
   z-index: -99999;
 }

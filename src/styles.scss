@@ -1,11 +1,27 @@
+:root {
+  --primarycolor     : ##9E9E9E;
+  --lightprimarycolor: #F5F5F5;
+  --darkprimarycolor : #616161;
+  --accentcolor      : #FFC107;
+  --primarytext      : #212121;
+  --text_icons       : #212121;
+  --secondarytext    : #757575;
+  --dividertext      : #BDBDBD;
+
+}
+
+
+
+
+
 body {
   margin: 0;
 }
 
 html,
 body {
-  height: 100%;
-  overflow:hidden;
+  height  : 100%;
+  overflow: hidden;
 }
 
 body {
@@ -13,12 +29,13 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-@media (max-width: 720px){
- .hide-mobile {
-   display: none;
- }
+@media (max-width: 720px) {
+  .hide-mobile {
+    display: none;
+  }
 }
-@media (min-width: 720px){
+
+@media (min-width: 720px) {
   .hide-desktop {
     display: none;
   }

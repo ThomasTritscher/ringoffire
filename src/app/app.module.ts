@@ -19,6 +19,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { EditPlayerComponent } from './edit-player/edit-player.component';
     MatDialogModule,
     MatInputModule,
     MatCardModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
