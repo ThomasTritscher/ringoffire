@@ -29,15 +29,15 @@
   </div>
 </div>
 
-<button *ngIf="!gameOver" (click)="openDialog()" class="btn-add" mat-fab color="primary">
+<button *ngIf="!gameOver" (click)="openDialog()" class="btn-add custom-btn-color" mat-fab color="primary">
   <mat-icon>add</mat-icon>
 </button>
 
-<button routerLink="/" *ngIf="!gameOver" class="btn-home" mat-fab color="primary">
+<button routerLink="/" *ngIf="!gameOver" class="btn-home custom-btn-color" mat-fab color="primary">
   <mat-icon>restart_alt</mat-icon>
 </button>
 
-<button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu">
+<button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu custom-btn-color">
   <mat-icon>more_vert</mat-icon>
 </button>
 
