@@ -1,0 +1,16 @@
+.rules {
+  background-color: var(--accentcolor);
+
+  img {
+    width     : 100vw;
+    height    : 100vh;
+    object-fit: none;
+
+
+    @media (max-width: 720px) {
+      width     : 100vw;
+      height    : 100vh;
+      object-fit: cover;
+    }
+  }
+}

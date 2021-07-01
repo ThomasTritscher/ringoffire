@@ -1,12 +1,13 @@
 :root {
-  --primarycolor     : ##9E9E9E;
-  --lightprimarycolor: #F5F5F5;
-  --darkprimarycolor : #616161;
-  --accentcolor      : #FFC107;
+  --primarycolor     : #00BCD4;
+  --lightprimarycolor: #B2EBF2;
+  --darkprimarycolor : #0097A7;
+  --accentcolor      : #FF5252;
   --primarytext      : #212121;
-  --text_icons       : #212121;
+  --text_icons       : #FFFFFF;
   --secondarytext    : #757575;
   --dividertext      : #BDBDBD;
+  --playerinactive   : hsla(187, 71%, 82%, 0.568);
 
 }
 
@@ -23,6 +24,16 @@ body {
 body {
   margin     : 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Lobster', cursive;
+
+}
+
+button {
+  background-color: var(--accentcolor) !important;
+}
+
+.player-active {
+  background-color: var(--accentcolor) !important ;
 }
 
 @media (max-width: 720px) {

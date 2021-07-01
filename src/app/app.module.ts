@@ -20,6 +20,7 @@ import { environment } from '../environments/environment';
 import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MatMenuModule } from '@angular/material/menu';
     GameInfoComponent,
     PlayerMobileComponent,
     EditPlayerComponent,
+    HelpComponent,
     
   ],
   imports: [

@@ -76,6 +76,7 @@
 }
 
 .btn-add {
+  background-color: var(--accentcolor);
   position: absolute;
   right   : 32px;
   bottom  : 32px;
@@ -108,16 +109,6 @@
   }
 
 }
-.custom-mini-fab-btn{
-  @media (max-width: 768px) {
-    position: absolute;
-    bottom  : 80px;
-    right   : 0px;
-    z-index : 5;
-  }
-}
-
-
 .pin-bottom {
   position: absolute;
   bottom  : 32px;

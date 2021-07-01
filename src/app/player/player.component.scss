@@ -1,9 +1,10 @@
 .player {
+  font-family: 'Lobster', cursive;
   overflow: hidden;
   width: 300px;
   display: flex;
   align-items: center;
-  background-color: rgb(202, 198, 191, 0.6);
+  background-color: var(--playerinactive);
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
 
@@ -26,6 +27,3 @@
 
 }
 
-.player-active {
-  background-color: orange !important ;
-}
