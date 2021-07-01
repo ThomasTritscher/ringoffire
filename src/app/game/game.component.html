@@ -1,10 +1,12 @@
-<app-player (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index;" [ngStyle]="{'top.px' : 20 + (i * 60)}"
-  [playerActive]="i == game.currentPlayer" [image]="game.player_images[i]" [name]="player" class="player-position hide-mobile">
+<app-player (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index;"
+  [ngStyle]="{'top.px' : 20 + (i * 60)}" [playerActive]="i == game.currentPlayer" [image]="game.player_images[i]"
+  [name]="player" class="player-position hide-mobile">
 </app-player>
 
-<div class="scroll-container hide-desktop">
-   <app-player-mobile (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index;" [playerActive]="i == game.currentPlayer" [image]="game.player_images[i]"
-    [name]="player"></app-player-mobile>
+<div class="scroll-container">
+  <app-player-mobile (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index;"
+    [playerActive]="i == game.currentPlayer" [image]="game.player_images[i]" [name]="player" class="hide-desktop">
+  </app-player-mobile>
 </div>
 <div *ngIf="gameOver" class="gameOver">
   <img src="/assets/img/game_over.svg" alt="">
@@ -31,8 +33,8 @@
   <mat-icon>add</mat-icon>
 </button>
 
-<button *ngIf="!gameOver"class="btn-home" mat-fab color="primary">
-  <mat-icon>home</mat-icon>
+<button routerLink="/" *ngIf="!gameOver" class="btn-home" mat-fab color="primary">
+  <mat-icon>restart_alt</mat-icon>
 </button>
 
 <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu">
@@ -40,23 +42,19 @@
 </button>
 
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>
-    <mat-icon>home</mat-icon>
-    <span>Home</span>
+  <button (click)="openDialog()" mat-menu-item>
+    <mat-icon>face</mat-icon>
+    <span>Add player</span>
   </button>
   <button mat-menu-item>
-    <mat-icon>settings</mat-icon>
-    <span>Settings</span>
+    <mat-icon>restart_alt</mat-icon>
+    <span>Restart</span>
   </button>
   <button mat-menu-item>
     <mat-icon>help</mat-icon>
     <span>Help</span>
   </button>
 </mat-menu>
-<button mat-mini-fab color="primary" class="custom-mini-fab-btn">
-  <mat-icon>add</mat-icon>
-</button>
-
 
 <app-game-info *ngIf="!gameOver" [card]="game.currentCard" class="pin-bottom"></app-game-info>
 <img class="preloadImage" src="/assets/img/cards/{{ game.stack[game.stack.length -1] }}.png" alt="">

@@ -47,9 +47,7 @@ export class GameComponent implements OnInit {
 
   newGame(): void {
     this.game = new Game();
-    // this.firestore
-    // .collection('Games')
-    // .add(this.game.toJson());
+
   }
 
   takeCard() {
