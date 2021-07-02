@@ -2,7 +2,7 @@
   width           : 100vw;
   height          : 100vh;
   max-width       : 100%;
-  background-image: url('/assets/img/table_backgorund.jpg');
+  background-image: url(../../assets/img/table_background.jpg);
   background-size : cover;
   display         : flex;
   justify-content : center;
@@ -101,7 +101,7 @@
 
 .mobile-menu {
 
-  @media (max-width: 768px) {
+  @media (max-width: 720px) {
     position: absolute;
     bottom  : 108px;
     right   : 0px;
